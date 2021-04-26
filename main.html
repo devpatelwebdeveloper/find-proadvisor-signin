@@ -1,0 +1,166 @@
+<style>
+  .container-accountant {
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  .container-accountant-find,
+  .container-accountant-have {
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+    padding: 30px;
+    min-height: 170px;
+  }
+  .container-accountant-find h3,
+  .container-accountant-find p {
+    color: #fff;
+  }
+  .container-accountant-find {
+    background-color: #2ca01c;
+    margin-right: 2%;
+  }
+  .container-accountant-have {
+    background-color: #fff;
+  }
+  .container-accountant-find .ctasecondary {
+    width: 175px;
+    margin: 0 0 3px 0;
+  }
+  .container-accountant-have .ctaprimary {
+    margin-top: 20px;
+    max-width: 90px;
+    text-align: center;
+  }
+  .accountant-form {
+    margin-top: 20px;
+  }
+  .accountant-input {
+    width: 175px;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    height: 32px;
+    outline: medium none;
+    padding: 0 6px;
+    margin: 0 10px 10px 0;
+  }
+  .mt-features-col-header {
+    margin-bottom: 10px;
+  }
+
+  @media only screen and (max-width: 991px) {
+    .chero-layers .content-layer .resp_grid div[class^="span"] > .ccontainer {
+      top: 130px;
+    }
+  }
+
+  /*@media only screen and (min-width: 992px) {
+.chero-layers .bg-layer .bg-md-center {
+margin-left: auto;
+-ms-transform: initial;
+-webkit-transform: initial;
+transform: initial;
+}
+}
+@media only screen and (max-width: 991px) and (min-width: 768px) {
+.chero-layers .bg-layer .bg-md-center {
+margin-left: auto;
+-ms-transform: initial;
+-webkit-transform: initial;
+transform: initial;
+}	
+}*/
+  @media only screen and (max-width: 767px) {
+    /*.chero-layers .bg-layer .bg-md-center {
+margin-left: auto;
+-ms-transform: initial;
+-webkit-transform: initial;
+transform: initial;
+}*/
+    .container-accountant-find,
+    .container-accountant-have {
+      display: block;
+      width: 100%;
+    }
+    .container-accountant-find {
+      margin: 0 0 20px 0;
+    }
+  }
+</style>
+<div class="container-accountant">
+  <div class="ccontainer container-accountant-find">
+    <h3>
+      <span class="mt-features-col-header"
+        >Ready to connect with a ProAdvisor?</span
+      >
+    </h3>
+    <p><span class="p2">Find a certified ProAdvisor near you.</span></p>
+    <div class="accountant-form">
+      <input
+        id="postal-code"
+        class="accountant-input"
+        type="text"
+        placeholder="City or Postal Code"
+      />
+      <a
+        id="accountant-cta"
+        class="ctasecondary accountant-cta"
+        data-wa-link="find-accountant-ca-cta-find"
+        href="#"
+        data-di-id="#find-accountant-ca-cta-find"
+        target="_blank"
+        >Find a ProAdvisor</a
+      >
+    </div>
+  </div>
+  <div class="ccontainer container-accountant-have">
+    <h3>
+      <span class="mt-features-col-header">Already have an Advisor?</span>
+    </h3>
+    <p>
+      <span class="p2">Add them to your QuickBooks Online account today.</span>
+    </p>
+    <a
+      class="ctaprimary"
+      data-wa-link="find-accountant-ca-cta-signin"
+      href="https://ca.qbo.intuit.com/login?pagereq=usermgt"
+      data-di-id="#find-accountant-ca-cta-signin"
+      >Sign In</a
+    >
+  </div>
+</div>
+
+<script>
+  var baseUrl =
+    "http://proadvisor.intuit.com/app/accountant/search?region=ca&distance=50";
+  var url = baseUrl;
+  var searchBtn = document.getElementById("accountant-cta");
+  var input = document.getElementById("postal-code");
+  searchBtn.onclick = function (e) {
+    e.preventDefault();
+    addLocation();
+    window.open(url);
+    console.log(url);
+    url = baseUrl;
+  };
+  input.onkeypress = function (e) {
+    if (e.which === 13) {
+      addLocation();
+      window.open(url);
+      console.log(url);
+      url = baseUrl;
+      return false;
+    }
+  };
+
+  function addLocation() {
+    var location = document.getElementById("postal-code").value;
+    if (input.value.length > 0) {
+      url = url + "&location=" + location;
+    }
+  }
+</script>

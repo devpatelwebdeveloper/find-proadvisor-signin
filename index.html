@@ -1,0 +1,162 @@
+<style>
+  .find-accountant-section {
+    background-color: #edeef0;
+    width: 100%;
+  }
+  .find-accountant-container {
+    display: flex;
+    flex-direction: row;
+    margin: 24px auto;
+    max-width: 1080px;
+    padding: 24px;
+  }
+  .finder-col,
+  .signin-col {
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+    padding: 30px;
+    min-height: 170px;
+  }
+  .finder-col {
+    background-color: #2ca01c;
+    margin-right: 2%;
+    color: #ffffff;
+  }
+  .signin-col {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  .col-header {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    font-weight: 600;
+  }
+  .col-text {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .finder-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .finder-form-input {
+    width: 175px;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    height: 32px;
+    outline: medium none;
+    padding: 0 6px;
+    margin-right: 10px;
+  }
+  .btn {
+    width: fit-content;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  .btn-primary {
+    border: 2px solid #2ca01c;
+    background-color: #2ca01c;
+  }
+  .btn-secondary {
+    border: 2px solid #000000;
+    background-color: #000000;
+  }
+  @media only screen and (max-width: 768px) {
+    .find-accountant-container {
+      flex-direction: column;
+    }
+    .finder-col,
+    .signin-col {
+      display: block;
+      width: auto;
+      margin: 10px;
+    }
+  }
+  @media only screen and (max-width: 425px) {
+    .finder-form {
+      flex-direction: column;
+    }
+    .finder-form-input {
+      margin-bottom: 10px;
+      margin-right: 0px;
+    }
+  }
+</style>
+<div class="find-accountant-section">
+  <div class="find-accountant-container">
+    <div class="finder-col">
+      <span class="col-header">Ready to connect with a ProAdvisor?</span>
+      <p clasas="col-text">Find a certified ProAdvisor near you.</p>
+      <div class="finder-form">
+        <input
+          id="postal-code"
+          class="finder-form-input"
+          type="text"
+          placeholder="City or Postal Code"
+        />
+        <a
+          id="accountant-cta"
+          class="btn btn-secondary"
+          data-wa-link="find-accountant-ca-cta-find"
+          href="#"
+          data-di-id="#find-accountant-ca-cta-find"
+          target="_blank"
+          ><span>Find a ProAdvisor</span></a
+        >
+      </div>
+    </div>
+    <div class="signin-col">
+      <span class="col-header">Already have an Advisor?</span>
+      <p clasas="col-text">Add them to your QuickBooks Online account today.</p>
+      <a
+        data-wa-link="find-accountant-ca-cta-signin"
+        href="https://ca.qbo.intuit.com/login?pagereq=usermgt"
+        data-di-id="#find-accountant-ca-cta-signin"
+        class="btn btn-primary"
+      >
+        <span>Sign in</span>
+      </a>
+    </div>
+  </div>
+</div>
+<script>
+  var baseUrl =
+    "http://proadvisor.intuit.com/app/accountant/search?region=ca&distance=50";
+  var url = baseUrl;
+  var searchBtn = document.getElementById("accountant-cta");
+  var input = document.getElementById("postal-code");
+  searchBtn.onclick = function (e) {
+    e.preventDefault();
+    addLocation();
+    window.open(url);
+    console.log(url);
+    url = baseUrl;
+  };
+  input.onkeypress = function (e) {
+    if (e.which === 13) {
+      addLocation();
+      window.open(url);
+      console.log(url);
+      url = baseUrl;
+      return false;
+    }
+  };
+
+  function addLocation() {
+    var location = document.getElementById("postal-code").value;
+    if (input.value.length > 0) {
+      url = url + "&location=" + location;
+    }
+  }
+</script>
