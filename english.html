@@ -144,8 +144,8 @@
 <div class="find-accountant-section">
   <div class="find-accountant-container">
     <div class="finder-col">
-      <span class="col-header">Prêt à rencontrer un ConseillerPro?</span>
-      <p clasas="col-text">Trouvez un ConseillerPro certifié près de vous.</p>
+      <span class="col-header">Ready to connect with a ProAdvisor?</span>
+      <p clasas="col-text">Find a certified ProAdvisor near you.</p>
       <div class="finder-form">
         <input
           id="postal-code"
@@ -156,33 +156,31 @@
         <a
           id="accountant-cta"
           class="btn btn-secondary"
-          data-wa-link="find-accountant-ca-cta-find-fr-ca"
+          data-wa-link="find-accountant-ca-cta-find"
           href="#"
-          data-di-id="#find-accountant-ca-cta-find-fr-ca"
+          data-di-id="#find-accountant-ca-cta-find"
           target="_blank"
-          ><span class="btn-text">Trouvez un ConseillerPror</span></a
+          ><span class="btn-text">Find a ProAdvisor</span></a
         >
       </div>
     </div>
     <div class="signin-col">
-      <span class="col-header">Vous avez déjà un conseiller?</span>
-      <p clasas="col-text">
-        Ajoutez-le dans votre compte QuickBooks en ligne aujourd’hui.
-      </p>
+      <span class="col-header">Already have an Advisor?</span>
+      <p clasas="col-text">Add them to your QuickBooks Online account today.</p>
       <a
-        data-wa-link="find-accountant-ca-cta-signin-fr-ca"
-        href="https://qbo.intuit.com/login?pagereq=usermgt&amp;locale=fr-ca"
-        data-di-id="#find-accountant-ca-cta-signin-fr-ca"
+        data-wa-link="find-accountant-ca-cta-signin"
+        href="https://ca.qbo.intuit.com/login?pagereq=usermgt"
+        data-di-id="#find-accountant-ca-cta-signin"
         class="btn btn-primary"
       >
-        <span class="btn-text">Se connecter</span>
+        <span class="btn-text">Sign in</span>
       </a>
     </div>
   </div>
 </div>
 <script>
   var baseUrl =
-    "https://proadvisor.intuit.com/app/accountant/search?locale=fr-ca&region=CA";
+    "http://proadvisor.intuit.com/app/accountant/search?region=ca&distance=50";
   var url = baseUrl;
   var searchBtn = document.getElementById("accountant-cta");
   var input = document.getElementById("postal-code");
