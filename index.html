@@ -54,7 +54,7 @@
     margin-right: 10px;
   }
 
-  .button {
+  .btn {
     font-size: 1rem;
     display: inline-flex;
     align-items: center;
@@ -74,7 +74,7 @@
     padding: 0 20px;
     color: #ffffff;
   }
-  .button::before {
+  .btn::before {
     position: absolute;
     width: calc(100% + 10px);
     height: calc(100% + 10px);
@@ -87,7 +87,7 @@
     transition: border-color 0.3s cubic-bezier(0.35, 0, 0.25, 1);
     box-sizing: border-box;
   }
-  .button::after {
+  .btn::after {
     position: absolute;
     content: "";
     display: block;
@@ -101,23 +101,23 @@
     opacity: 0;
     box-sizing: border-box;
   }
-  .button:hover:after {
+  .btn:hover:after {
     right: 0;
     opacity: 1;
   }
-  .button-primary {
+  .btn-primary {
     background-color: #2ca01c;
   }
-  .button-primary::after {
+  .btn-primary::after {
     background-color: #0d7300;
   }
-  .button-secondary {
+  .btn-secondary {
     background-color: #393a3d;
   }
-  .button-secondary::after {
+  .btn-secondary::after {
     background-color: #000000;
   }
-  .button-text {
+  .btn-text {
     z-index: 1;
   }
   @media only screen and (max-width: 768px) {
@@ -155,12 +155,12 @@
         />
         <a
           id="accountant-cta"
-          class="button button-secondary"
+          class="btn btn-secondary"
           data-wa-link="find-accountant-ca-cta-find"
           href="#"
           data-di-id="#find-accountant-ca-cta-find"
           target="_blank"
-          ><span class="button-text">Find a ProAdvisor</span></a
+          ><span class="btn-text">Find a ProAdvisor</span></a
         >
       </div>
     </div>
@@ -171,9 +171,9 @@
         data-wa-link="find-accountant-ca-cta-signin"
         href="https://ca.qbo.intuit.com/login?pagereq=usermgt"
         data-di-id="#find-accountant-ca-cta-signin"
-        class="button button-primary"
+        class="btn btn-primary"
       >
-        <span class="button-text">Sign in</span>
+        <span class="btn-text">Sign in</span>
       </a>
     </div>
   </div>
